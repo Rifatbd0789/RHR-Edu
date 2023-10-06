@@ -18,7 +18,11 @@ const Home = () => {
       >
         <div className="hero-overlay py-64"></div>
         <div className="hero-content text-center text-neutral-content">
-          <div className="max-w-md" data-aos="fade-right">
+          <div
+            className="max-w-md"
+            data-aos="fade-down"
+            data-aos-duration="2000"
+          >
             <h1 className="mb-5 text-5xl font-bold">We Build Future</h1>
             <p className="mb-5">Education is the backbone of a nation!!!</p>
           </div>
@@ -26,10 +30,7 @@ const Home = () => {
       </div>
       {/* Card Section */}
       <p className="font-bold text-3xl mt-10 mx-20 text-center">Services</p>
-      <div
-        className="grid grid-cols-4  gap-10 my-10 mx-5"
-        data-aos="fade-right"
-      >
+      <div className="grid grid-cols-4  gap-10 my-10 mx-5">
         {datas.map((data) => (
           <Card key={data.id} data={data}></Card>
         ))}

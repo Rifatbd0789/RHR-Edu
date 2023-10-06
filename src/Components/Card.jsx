@@ -4,7 +4,11 @@ const Card = ({ data }) => {
   const { id, image, name, shorts, price } = data;
   return (
     <div>
-      <div className="card bg-base-100 shadow-xl mx-auto border ">
+      <div
+        className="card bg-base-100 shadow-xl mx-auto border "
+        data-aos="flip-right"
+        data-aos-duration="2000"
+      >
         <figure>
           <img className="w-full h-44" src={image} alt="Shoes" />
         </figure>

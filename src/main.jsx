@@ -7,6 +7,10 @@ import Home from "./Components/Home";
 import Login from "./Components/Login";
 import Registration from "./Components/Registration";
 import Details from "./Components/Details";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+AOS.init();
 
 const router = createBrowserRouter([
   {
