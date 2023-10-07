@@ -2,10 +2,13 @@ import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { context } from "../ContextProvider/Provider";
 import { updateProfile } from "firebase/auth";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { FcGoogle } from "react-icons/fc";
 // import { updateProfile } from "firebase/auth";
 
 const Registration = () => {
-  const { createUser } = useContext(context);
+  const { createUser, googleLogIn } = useContext(context);
   //   const [successReg, setSuccessReg] = useState("");
   const [registerError, setregisterError] = useState("");
   const handleRegister = (e) => {
@@ -18,6 +21,7 @@ const Registration = () => {
 
     setregisterError("");
 
+    // password Validation
     if (password.length < 6) {
       setregisterError(
         "Registration Failed !  Password must be more than 6 character !"
@@ -44,8 +48,19 @@ const Registration = () => {
         })
           .then()
           .catch((error) => setregisterError(error.code));
+        toast(`${Name}! Successfully Registered !`);
+        e.target.reset();
       })
       .catch((error) => setregisterError(error.code));
+  };
+
+  const handleGoogleReg = () => {
+    setregisterError("");
+    googleLogIn()
+      .then((result) =>
+        toast(`${result.user.displayName}! Successfully Registered !`)
+      )
+      .catch((error) => setregisterError(error));
   };
   return (
     <div>
@@ -117,11 +132,18 @@ const Registration = () => {
                 <button className="btn btn-primary normal-case bg-[#29465B] text-white border-none hover:bg-slate-400 hover:text-black">
                   Register
                 </button>
+                <button
+                  onClick={handleGoogleReg}
+                  className=" mt-2 btn btn-outline normal-case text-[#29465B] border-none  hover:bg-slate-400 hover:text-black"
+                >
+                  <FcGoogle></FcGoogle> Log in with Google
+                </button>
               </div>
             </form>
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { context } from "../ContextProvider/Provider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Navbar = () => {
   const { user, logOutUser } = useContext(context);
@@ -24,8 +26,8 @@ const Navbar = () => {
   );
   const handleLogOut = () => {
     logOutUser()
-      .then(() => console.log("logout successfully!"))
-      .catch((err) => console.log(err));
+      .then(() => toast("Logout Successfully!"))
+      .catch((err) => toast(err.code));
   };
   //   console.log(user);
   return (
@@ -86,6 +88,7 @@ const Navbar = () => {
           )}
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

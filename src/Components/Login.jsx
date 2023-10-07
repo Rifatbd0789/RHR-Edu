@@ -1,18 +1,35 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, Navigate } from "react-router-dom";
 import { context } from "../ContextProvider/Provider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
-  const { logInUser } = useContext(context);
+  const { logInUser, googleLogIn } = useContext(context);
+  const [logInerror, setLogInError] = useState("");
 
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
+    setLogInError("");
     logInUser(email, password)
-      .then((res) => console.log(res.operationType, "Successfully !"))
-      .catch((err) => console.log(err.code));
+      .then((res) => {
+        toast(`Successfully  ${res.operationType} ! `);
+        e.target.reset();
+      })
+      .catch((err) => setLogInError(err.code));
+  };
+
+  const handleGoogleLog = () => {
+    setLogInError("");
+    googleLogIn()
+      .then((result) =>
+        toast(`${result.user.displayName}! Successfully Registered !`)
+      )
+      .catch((error) => setLogInError(error));
   };
 
   return (
@@ -48,7 +65,10 @@ const Login = () => {
                   required
                 />
               </div>
-              <div className="form-control mt-6">
+              {logInerror && (
+                <p className="text-red-600 font-semibold">{logInerror}</p>
+              )}
+              <div className="form-control mt-2">
                 <p className="mb-2">
                   New Here ? Please
                   <Link to={"/register"}>
@@ -61,11 +81,18 @@ const Login = () => {
                 <button className="btn btn-primary normal-case bg-[#29465B] border-none text-white hover:bg-slate-400 hover:text-black">
                   Log in
                 </button>
+                <button
+                  onClick={handleGoogleLog}
+                  className=" mt-2 btn btn-outline normal-case text-[#29465B] border-none  hover:bg-slate-400 hover:text-black"
+                >
+                  <FcGoogle></FcGoogle> Log in with Google
+                </button>
               </div>
             </form>
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
