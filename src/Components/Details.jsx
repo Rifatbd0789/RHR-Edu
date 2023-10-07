@@ -8,7 +8,9 @@ const Details = () => {
   const { name, price, details, image } = dublicate;
   return (
     <div>
-      <Navbar></Navbar>
+      <div className="sticky top-0 z-10">
+        <Navbar></Navbar>
+      </div>
       <div className="hero w-full md:py-20  md:bg-base-200">
         <div className="hero-content flex-col lg:flex-row md:mx-20 gap-5">
           <div>

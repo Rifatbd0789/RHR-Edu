@@ -11,6 +11,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Provider from "./ContextProvider/Provider";
 import Private from "./Components/Private";
+import Blogs from "./Components/Blogs";
+import ContactUs from "./Components/ContactUs";
 
 AOS.init();
 
@@ -40,6 +42,23 @@ const router = createBrowserRouter([
           </Private>
         ),
         loader: () => fetch("/data.json"),
+      },
+      {
+        path: "/blogs",
+        element: (
+          <Private>
+            <Blogs></Blogs>
+          </Private>
+        ),
+        loader: () => fetch("/blog.json"),
+      },
+      {
+        path: "/contact",
+        element: (
+          <Private>
+            <ContactUs></ContactUs>,
+          </Private>
+        ),
       },
     ],
   },

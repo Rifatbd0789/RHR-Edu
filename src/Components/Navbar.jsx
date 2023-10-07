@@ -11,16 +11,32 @@ const Navbar = () => {
       <li>
         <NavLink
           to={"/"}
-          className={({ isActive }) => isActive && "bg-[#013E62] text-white"}
+          className={({ isActive }) =>
+            isActive && " underline underline-offset-4 decoration-white "
+          }
         >
           Home
         </NavLink>
       </li>
       <li>
-        <NavLink to={"/login"}>Details</NavLink>
+        <NavLink
+          to={"/blogs"}
+          className={({ isActive }) =>
+            isActive && " underline underline-offset-4 decoration-white "
+          }
+        >
+          Blogs
+        </NavLink>
       </li>
       <li>
-        <NavLink to={"/career"}>Career</NavLink>
+        <NavLink
+          to={"/contact"}
+          className={({ isActive }) =>
+            isActive && " underline underline-offset-4 decoration-white "
+          }
+        >
+          Contact Us
+        </NavLink>
       </li>
     </>
   );
@@ -32,7 +48,7 @@ const Navbar = () => {
   //   console.log(user);
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-[#135e8a] text-white">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -53,15 +69,15 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#135e8a] rounded-box w-52"
             >
               {NavLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl ">RHR-EDU</a>
+          <a className="btn btn-ghost normal-case text-2xl  ">RHR-EDU</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{NavLinks}</ul>
+          <ul className="menu menu-horizontal px-1 ">{NavLinks}</ul>
         </div>
         <div className="navbar-end ">
           {user ? (
@@ -71,7 +87,7 @@ const Navbar = () => {
               <NavLink
                 onClick={handleLogOut}
                 // to={"/login"}
-                className="btn normal-case hover:bg-[#013E62] hover:text-white"
+                className="btn normal-case bg-[#013E62] text-white hover:text-black"
               >
                 Log Out
               </NavLink>
@@ -80,7 +96,7 @@ const Navbar = () => {
             <>
               <NavLink
                 to={"/login"}
-                className="btn normal-case hover:bg-[#013E62] hover:text-white"
+                className="btn normal-case bg-[#013E62] text-white hover:text-black"
               >
                 Login
               </NavLink>

@@ -1,5 +1,3 @@
-import Navbar from "./Navbar";
-
 const Banner = () => {
   return (
     <div>

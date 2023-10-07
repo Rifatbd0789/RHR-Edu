@@ -10,7 +10,9 @@ const Home = () => {
   const datas = useLoaderData();
   return (
     <div>
-      <Navbar></Navbar>
+      <div>
+        <Navbar></Navbar>
+      </div>
       <Banner></Banner>
       {/* Card Section */}
       <p className="font-bold text-5xl mt-10 mx-20 text-center">Our Services</p>
