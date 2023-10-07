@@ -1,6 +1,20 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { context } from "../ContextProvider/Provider";
 
 const Login = () => {
+  const { logInUser } = useContext(context);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    const email = form.get("email");
+    const password = form.get("password");
+    logInUser(email, password)
+      .then((res) => console.log(res.operationType, "Successfully !"))
+      .catch((err) => console.log(err.code));
+  };
+
   return (
     <div>
       <div className="hero min-h-screen bg-[#29465B]">
@@ -9,7 +23,7 @@ const Login = () => {
             <h1 className="text-5xl font-bold text-white">Login Here!</h1>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form className="card-body">
+            <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -18,6 +32,7 @@ const Login = () => {
                   type="email"
                   placeholder="email"
                   className="input input-bordered"
+                  name="email"
                   required
                 />
               </div>
@@ -29,6 +44,7 @@ const Login = () => {
                   type="password"
                   placeholder="password"
                   className="input input-bordered"
+                  name="password"
                   required
                 />
               </div>

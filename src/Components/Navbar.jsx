@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { context } from "../ContextProvider/Provider";
 
 const Navbar = () => {
+  const { user } = useContext(context);
+  console.log(user);
   const NavLinks = (
     <>
       <li>

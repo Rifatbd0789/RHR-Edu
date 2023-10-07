@@ -1,6 +1,19 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { context } from "../ContextProvider/Provider";
 
 const Registration = () => {
+  const { createUser } = useContext(context);
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget);
+    const email = form.get("email");
+    const password = form.get("password");
+    createUser(email, password)
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div>
       <div className="hero min-h-screen bg-[#29465B]">
@@ -9,7 +22,7 @@ const Registration = () => {
             <h1 className="text-5xl font-bold text-white">Register Here!</h1>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form className="card-body">
+            <form onSubmit={handleRegister} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>
@@ -18,6 +31,7 @@ const Registration = () => {
                   type="text"
                   placeholder="Your Name..."
                   className="input input-bordered"
+                  name="name"
                 />
               </div>
               <div className="form-control">
@@ -28,6 +42,7 @@ const Registration = () => {
                   type="text"
                   placeholder="Your photo url..."
                   className="input input-bordered"
+                  name="photo"
                 />
               </div>
               <div className="form-control">
@@ -38,6 +53,7 @@ const Registration = () => {
                   type="email"
                   placeholder="email"
                   className="input input-bordered"
+                  name="email"
                   required
                 />
               </div>
@@ -49,6 +65,7 @@ const Registration = () => {
                   type="password"
                   placeholder="password"
                   className="input input-bordered"
+                  name="password"
                   required
                 />
               </div>
@@ -56,7 +73,7 @@ const Registration = () => {
                 <p className="mb-2">
                   Already Have an account ?{" "}
                   <Link to={"/login"}>
-                    <span className="text-blue-600 font-bold">
+                    <span className="text-blue-600 font-bold mb-2">
                       Login Here..
                     </span>
                   </Link>
