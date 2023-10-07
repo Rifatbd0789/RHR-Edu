@@ -1,19 +1,52 @@
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { context } from "../ContextProvider/Provider";
+import { updateProfile } from "firebase/auth";
+// import { updateProfile } from "firebase/auth";
 
 const Registration = () => {
   const { createUser } = useContext(context);
+  //   const [successReg, setSuccessReg] = useState("");
+  const [registerError, setregisterError] = useState("");
   const handleRegister = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
-    createUser(email, password)
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
-  };
+    const Name = form.get("displayName");
+    const photo = form.get("photo");
 
+    setregisterError("");
+
+    if (password.length < 6) {
+      setregisterError(
+        "Registration Failed !  Password must be more than 6 character !"
+      );
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      setregisterError(
+        "Registration Failed !  Password must include at least one Capital letter !"
+      );
+      return;
+    } else if (!/[#?!@$%^&*-]/.test(password)) {
+      setregisterError(
+        "Registration Failed !  Password must include a special character!"
+      );
+      return;
+    }
+
+    createUser(email, password)
+      .then((result) => {
+        // console.log(result.user);
+        updateProfile(result.user, {
+          displayName: Name,
+          photoURL: photo,
+        })
+          .then()
+          .catch((error) => setregisterError(error.code));
+      })
+      .catch((error) => setregisterError(error.code));
+  };
   return (
     <div>
       <div className="hero min-h-screen bg-[#29465B]">
@@ -31,7 +64,7 @@ const Registration = () => {
                   type="text"
                   placeholder="Your Name..."
                   className="input input-bordered"
-                  name="name"
+                  name="displayName"
                 />
               </div>
               <div className="form-control">
@@ -69,6 +102,9 @@ const Registration = () => {
                   required
                 />
               </div>
+              {registerError && (
+                <p className="text-red-600 font-semibold">{registerError}</p>
+              )}
               <div className="form-control mt-6">
                 <p className="mb-2">
                   Already Have an account ?{" "}

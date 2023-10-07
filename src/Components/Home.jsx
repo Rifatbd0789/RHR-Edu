@@ -8,7 +8,6 @@ import Whychoose from "./Whychoose";
 
 const Home = () => {
   const datas = useLoaderData();
-  console.log(datas);
   return (
     <div>
       <Navbar></Navbar>

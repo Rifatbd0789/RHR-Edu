@@ -3,8 +3,7 @@ import { NavLink } from "react-router-dom";
 import { context } from "../ContextProvider/Provider";
 
 const Navbar = () => {
-  const { user } = useContext(context);
-  console.log(user);
+  const { user, logOutUser } = useContext(context);
   const NavLinks = (
     <>
       <li>
@@ -23,6 +22,12 @@ const Navbar = () => {
       </li>
     </>
   );
+  const handleLogOut = () => {
+    logOutUser()
+      .then(() => console.log("logout successfully!"))
+      .catch((err) => console.log(err));
+  };
+  //   console.log(user);
   return (
     <div>
       <div className="navbar bg-base-100">
@@ -57,12 +62,28 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{NavLinks}</ul>
         </div>
         <div className="navbar-end ">
-          <NavLink
-            to={"/login"}
-            className="btn normal-case hover:bg-[#013E62] hover:text-white"
-          >
-            Login
-          </NavLink>
+          {user ? (
+            <>
+              <p>{user?.displayName}</p>
+              <img className="w-12" src={user?.photoURL} alt="" />
+              <NavLink
+                onClick={handleLogOut}
+                // to={"/login"}
+                className="btn normal-case hover:bg-[#013E62] hover:text-white"
+              >
+                Log Out
+              </NavLink>
+            </>
+          ) : (
+            <>
+              <NavLink
+                to={"/login"}
+                className="btn normal-case hover:bg-[#013E62] hover:text-white"
+              >
+                Login
+              </NavLink>
+            </>
+          )}
         </div>
       </div>
     </div>
