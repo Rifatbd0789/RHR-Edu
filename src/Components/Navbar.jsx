@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
@@ -8,7 +7,7 @@ const Navbar = () => {
         <NavLink to={"/"}>Home</NavLink>
       </li>
       <li>
-        <NavLink to={"/about"}>About Us</NavLink>
+        <NavLink to={"/login"}>Details</NavLink>
       </li>
       <li>
         <NavLink to={"/career"}>Career</NavLink>
