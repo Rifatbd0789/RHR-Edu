@@ -10,6 +10,7 @@ import Details from "./Components/Details";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Provider from "./ContextProvider/Provider";
+import Private from "./Components/Private";
 
 AOS.init();
 
@@ -33,7 +34,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/details/:id",
-        element: <Details></Details>,
+        element: (
+          <Private>
+            <Details></Details>
+          </Private>
+        ),
         loader: () => fetch("/data.json"),
       },
     ],

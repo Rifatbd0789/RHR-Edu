@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Navbar from "./Navbar";
 import Card from "./Card";
 import Banner from "./Banner";
-import Foother from "./Foother";
+import Footer from "./Footer";
 import Experts from "./Experts";
 import Whychoose from "./Whychoose";
 
@@ -26,7 +26,7 @@ const Home = () => {
         <Whychoose></Whychoose>
       </div>
       {/* Footer Section */}
-      <Foother></Foother>
+      <Footer></Footer>
     </div>
   );
 };

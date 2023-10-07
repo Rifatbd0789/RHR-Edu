@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { context } from "../ContextProvider/Provider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -8,7 +8,8 @@ import { FcGoogle } from "react-icons/fc";
 const Login = () => {
   const { logInUser, googleLogIn } = useContext(context);
   const [logInerror, setLogInError] = useState("");
-
+  const location = useLocation();
+  const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
@@ -19,6 +20,7 @@ const Login = () => {
       .then((res) => {
         toast(`Successfully  ${res.operationType} ! `);
         e.target.reset();
+        navigate(location?.state ? location.state : "/");
       })
       .catch((err) => setLogInError(err.code));
   };
@@ -26,10 +28,11 @@ const Login = () => {
   const handleGoogleLog = () => {
     setLogInError("");
     googleLogIn()
-      .then((result) =>
-        toast(`${result.user.displayName}! Successfully Registered !`)
-      )
-      .catch((error) => setLogInError(error));
+      .then((result) => {
+        toast(`${result.user.displayName}! Successfully Registered !`);
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => setLogInError(error.code));
   };
 
   return (
