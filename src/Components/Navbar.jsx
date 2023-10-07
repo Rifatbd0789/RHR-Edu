@@ -4,7 +4,12 @@ const Navbar = () => {
   const NavLinks = (
     <>
       <li>
-        <NavLink to={"/"}>Home</NavLink>
+        <NavLink
+          to={"/"}
+          className={({ isActive }) => isActive && "bg-[#013E62] text-white"}
+        >
+          Home
+        </NavLink>
       </li>
       <li>
         <NavLink to={"/login"}>Details</NavLink>
@@ -47,8 +52,11 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{NavLinks}</ul>
         </div>
-        <div className="navbar-end">
-          <NavLink to={"/login"} className="btn normal-case">
+        <div className="navbar-end ">
+          <NavLink
+            to={"/login"}
+            className="btn normal-case hover:bg-[#013E62] hover:text-white"
+          >
             Login
           </NavLink>
         </div>

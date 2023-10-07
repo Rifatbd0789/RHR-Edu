@@ -4,6 +4,7 @@ import Card from "./Card";
 import Banner from "./Banner";
 import Foother from "./Foother";
 import Experts from "./Experts";
+import Whychoose from "./Whychoose";
 
 const Home = () => {
   const datas = useLoaderData();
@@ -19,8 +20,12 @@ const Home = () => {
           <Card key={data.id} data={data}></Card>
         ))}
       </div>
-      <Experts></Experts>
-      <div></div>
+      <div>
+        <Experts></Experts>
+      </div>
+      <div>
+        <Whychoose></Whychoose>
+      </div>
       {/* Footer Section */}
       <Foother></Foother>
     </div>

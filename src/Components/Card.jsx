@@ -19,7 +19,10 @@ const Card = ({ data }) => {
           <hr />
           <p className="text-center">Price: {price}$</p>
           <div className="card-actions justify-center">
-            <Link className="btn btn-primary" to={`/details/${id}`}>
+            <Link
+              className="btn btn-primary bg-[#013E62] border-none text-white hover:bg-slate-400 hover:text-black"
+              to={`/details/${id}`}
+            >
               Details
             </Link>
           </div>

@@ -1,16 +1,16 @@
-import React from "react";
+import Navbar from "./Navbar";
 
 const Banner = () => {
   return (
     <div>
       <div
-        className="hero w-full h-full"
+        className="hero w-full "
         style={{
           backgroundImage:
             "url(https://i.ibb.co/0YGgpRG/17213260-rm373batch13-085.jpg)",
         }}
       >
-        <div className="hero-overlay py-64"></div>
+        <div className=" py-72 "></div>
         <div className="hero-content text-center text-neutral-content">
           <div
             className="max-w-md"

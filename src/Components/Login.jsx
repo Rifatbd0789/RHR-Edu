@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 const Login = () => {
   return (
     <div>
-      <div className="hero min-h-screen bg-base-200">
+      <div className="hero min-h-screen bg-[#29465B]">
         <div className="hero-content flex-col lg:flex-col">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Login now!</h1>
+            <h1 className="text-5xl font-bold text-white">Login Here!</h1>
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form className="card-body">
@@ -42,7 +42,9 @@ const Login = () => {
                     </span>
                   </Link>
                 </p>
-                <button className="btn btn-primary normal-case">Log in</button>
+                <button className="btn btn-primary normal-case bg-[#29465B] border-none text-white hover:bg-slate-400 hover:text-black">
+                  Log in
+                </button>
               </div>
             </form>
           </div>
