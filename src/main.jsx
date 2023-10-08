@@ -13,6 +13,7 @@ import Provider from "./ContextProvider/Provider";
 import Private from "./Components/Private";
 import Blogs from "./Components/Blogs";
 import ContactUs from "./Components/ContactUs";
+import Error from "./Components/Error";
 
 AOS.init();
 
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",
