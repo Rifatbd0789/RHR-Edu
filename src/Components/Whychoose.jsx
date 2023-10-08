@@ -6,12 +6,14 @@ const Whychoose = () => {
         data-aos="fade-down"
         data-aos-duration="1000"
       >
-        <h1 className="text-5xl font-bold text-center my-5">Why Choose Us!</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-center my-5">
+          Why Choose Us!
+        </h1>
       </div>
       <div className="hero  bg-base-200">
-        <div className="hero-content flex-col lg:flex-row mx-10 gap-10">
+        <div className="hero-content flex-col lg:flex-row lg:mx-10 gap-10">
           {/* Left Side */}
-          <div data-aos="fade-right" data-aos-duration="2000">
+          <div data-aos="fade-down" data-aos-duration="5000">
             {/* Left Side 1*/}
             <div className="my-5">
               <h1 className="font-semibold text-2xl border-b-4  ">
@@ -25,7 +27,6 @@ const Whychoose = () => {
                 mentoring.
               </p>
             </div>
-
             {/* Left Side 2*/}
             <div className="my-5">
               <h1 className="font-semibold text-2xl border-b-4  ">
@@ -53,7 +54,7 @@ const Whychoose = () => {
             </div>
           </div>
           {/* Right Side */}
-          <div data-aos="fade-left" data-aos-duration="2000">
+          <div data-aos="fade-up" data-aos-duration="5000">
             {/* Right Side 1*/}
             <div className="my-5">
               <h1 className="font-semibold text-2xl border-b-4 ">

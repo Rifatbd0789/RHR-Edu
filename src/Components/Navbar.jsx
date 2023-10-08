@@ -45,13 +45,15 @@ const Navbar = () => {
       .then(() => toast("Logout Successfully!"))
       .catch((err) => toast(err.code));
   };
-  //   console.log(user);
   return (
     <div>
       <div className="navbar bg-[#135e8a] text-white">
         <div className="navbar-start">
           <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
+            <label
+              tabIndex={0}
+              className="btn btn-ghost px-2 md:px-4 lg:hidden"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -69,12 +71,12 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#135e8a] rounded-box w-52"
+              className="menu menu-sm  dropdown-content mt-3 z-[1] p-2 shadow bg-[#135e8a] rounded-box"
             >
               {NavLinks}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-2xl  ">RHR-EDU</a>
+          <a className=" normal-case text-medium md:text-2xl  ">RHR-EDU</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1 ">{NavLinks}</ul>
@@ -82,11 +84,15 @@ const Navbar = () => {
         <div className="navbar-end ">
           {user ? (
             <>
-              <p>{user?.displayName}</p>
-              <img className="w-12 rounded-full" src={user?.photoURL} alt="" />
+              <p className="text-xs md:text-xl">{user?.displayName}</p>
+              <img
+                className="w-12 rounded-full mr-3"
+                src={user?.photoURL}
+                alt=""
+              />
               <NavLink
                 onClick={handleLogOut}
-                className="btn normal-case bg-[#013E62] text-white hover:text-black"
+                className="btn btn-xs md:btn-md normal-case bg-[#013E62] text-white hover:text-black"
               >
                 Log Out
               </NavLink>

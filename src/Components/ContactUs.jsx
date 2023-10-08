@@ -10,7 +10,7 @@ const ContactUs = () => {
         <Navbar></Navbar>
       </div>
       <div className="hero md:min-h-screen bg-base-200">
-        <div className="hero-content  flex-col lg:flex-row  lg:gap-40">
+        <div className="hero-content flex flex-col lg:flex-row  lg:gap-40">
           <div>
             <form>
               <div data-aos="fade-down" data-aos-duration="2000">
@@ -18,8 +18,8 @@ const ContactUs = () => {
                   Message Us :
                 </p>
               </div>
-              <div data-aos="fade-right" data-aos-duration="2000">
-                <div className="card-body pb-2 flex-row gap-5">
+              <div data-aos="fade-up" data-aos-duration="2000">
+                <div className="card-body pb-2 flex-col md:flex-row gap-5">
                   <div className="form-control">
                     <input
                       type="text"
@@ -74,7 +74,7 @@ const ContactUs = () => {
                 Office Address :
               </h1>
             </div>
-            <div data-aos="fade-left" data-aos-duration="2000">
+            <div data-aos="fade-up" data-aos-duration="2000">
               <div className="py-6 flex gap-3">
                 <span className="pt-2">
                   <FcHome className="text-3xl"></FcHome>
