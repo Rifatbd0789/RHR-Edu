@@ -48,9 +48,9 @@ const Registration = () => {
           .catch((error) => setregisterError(error.code));
         e.target.reset();
         toast(`${Name} Successfully Registered !`);
+        navigate("/login");
       })
       .catch((error) => setregisterError(error.code));
-    navigate("/login");
   };
 
   const handleGoogleReg = () => {
@@ -58,9 +58,9 @@ const Registration = () => {
     googleLogIn()
       .then(() => {
         toast(" Successfully Registered & Logged In!");
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => setregisterError(error));
-    navigate(location?.state ? location.state : "/");
   };
   return (
     <div>
