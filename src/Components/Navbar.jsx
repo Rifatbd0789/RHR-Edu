@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { context } from "../ContextProvider/Provider";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Navbar = () => {
@@ -83,10 +83,9 @@ const Navbar = () => {
           {user ? (
             <>
               <p>{user?.displayName}</p>
-              <img className="w-12" src={user?.photoURL} alt="" />
+              <img className="w-12 rounded-full" src={user?.photoURL} alt="" />
               <NavLink
                 onClick={handleLogOut}
-                // to={"/login"}
                 className="btn normal-case bg-[#013E62] text-white hover:text-black"
               >
                 Log Out
@@ -104,7 +103,6 @@ const Navbar = () => {
           )}
         </div>
       </div>
-      <ToastContainer />
     </div>
   );
 };

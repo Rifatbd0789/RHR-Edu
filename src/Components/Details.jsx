@@ -1,6 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import Navbar from "./Navbar";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 const Details = () => {
   const { id } = useParams();
@@ -33,7 +33,6 @@ const Details = () => {
           </div>
         </div>
       </div>
-      <ToastContainer />
     </div>
   );
 };

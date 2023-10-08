@@ -1,8 +1,7 @@
 import Navbar from "./Navbar";
 import { FcHome, FcPhone } from "react-icons/fc";
 import { MdEmail } from "react-icons/md";
-import Footer from "./Footer";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 const ContactUs = () => {
   return (
@@ -107,7 +106,6 @@ const ContactUs = () => {
           </div>
         </div>
       </div>
-      <ToastContainer />
     </div>
   );
 };

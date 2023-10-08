@@ -1,4 +1,8 @@
 import Marquee from "react-fast-marquee";
+import pic1 from "../assets/7074311_3554557.svg";
+import pic2 from "../assets/image-from-rawpixel-id-44457-jpeg.jpg";
+import pic3 from "../assets/image-from-rawpixel-id-2023808-png.png";
+import pic4 from "../assets/image-from-rawpixel-id-44439-svg.svg";
 
 const Experts = () => {
   return (
@@ -11,11 +15,7 @@ const Experts = () => {
           {/* first experts */}
           <div className="mr-32 ">
             <div className="avatar w-48 mx-auto">
-              <img
-                className="rounded-full"
-                src="/public/7074311_3554557.svg"
-                alt=""
-              />
+              <img className="rounded-full" src={pic1} alt="" />
             </div>
             <div className="text-center">
               <p className="font-medium text-xl">Mr. Rifat</p>
@@ -25,11 +25,7 @@ const Experts = () => {
           {/* second experts */}
           <div className="mr-32">
             <div className="avatar w-48 rounded-full ">
-              <img
-                className="rounded-full"
-                src="/public/image-from-rawpixel-id-44457-jpeg.jpg"
-                alt=""
-              />
+              <img className="rounded-full" src={pic2} alt="" />
             </div>
             <div className="text-center">
               <p className="font-medium text-xl">Mr. Rabby</p>
@@ -39,11 +35,7 @@ const Experts = () => {
           {/* third experts */}
           <div className="mr-32">
             <div className="avatar w-48 rounded-full ">
-              <img
-                className="rounded-full"
-                src="/public/image-from-rawpixel-id-2023808-png.png"
-                alt=""
-              />
+              <img className="rounded-full" src={pic3} alt="" />
             </div>
             <div className="text-center">
               <p className="font-medium text-xl">Mr. Risam</p>
@@ -53,11 +45,7 @@ const Experts = () => {
           {/* fourth experts */}
           <div className="mr-32">
             <div className="avatar w-48 rounded-full ">
-              <img
-                className="rounded-full"
-                src="/public/image-from-rawpixel-id-44439-svg.svg"
-                alt=""
-              />
+              <img className="rounded-full" src={pic4} alt="" />
             </div>
             <div className="text-center">
               <p className="font-medium text-xl">Mr. John</p>

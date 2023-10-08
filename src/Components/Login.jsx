@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { context } from "../ContextProvider/Provider";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FcGoogle } from "react-icons/fc";
 
@@ -28,13 +28,11 @@ const Login = () => {
   const handleGoogleLog = () => {
     setLogInError("");
     googleLogIn()
-      .then((result) => {
-        toast(
-          `${result.user.displayName}! Successfully Registered & Logged In !`
-        );
-        navigate(location?.state ? location.state : "/");
+      .then(() => {
+        toast(" Successfully! Registered & Logged In!");
       })
       .catch((error) => setLogInError(error.code));
+    navigate(location?.state ? location.state : "/");
   };
 
   return (
@@ -86,18 +84,17 @@ const Login = () => {
                 <button className="btn btn-primary normal-case bg-[#29465B] border-none text-white hover:bg-slate-400 hover:text-black">
                   Log in
                 </button>
-                <button
-                  onClick={handleGoogleLog}
-                  className=" mt-2 btn btn-outline normal-case text-[#29465B] border-none  hover:bg-slate-400 hover:text-black"
-                >
-                  <FcGoogle></FcGoogle> Log in with Google
-                </button>
               </div>
             </form>
+            <button
+              onClick={handleGoogleLog}
+              className=" mb-2 mx-2 btn btn-outline normal-case text-[#29465B] border-none  hover:bg-slate-400 hover:text-black"
+            >
+              <FcGoogle></FcGoogle> Log in with Google
+            </button>
           </div>
         </div>
       </div>
-      <ToastContainer />
     </div>
   );
 };
