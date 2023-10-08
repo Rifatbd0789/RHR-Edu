@@ -1,16 +1,20 @@
 const Whychoose = () => {
   return (
     <div>
-      <div className="text-center">
+      <div
+        className="text-center "
+        data-aos="fade-down"
+        data-aos-duration="1000"
+      >
         <h1 className="text-5xl font-bold text-center my-5">Why Choose Us!</h1>
       </div>
       <div className="hero  bg-base-200">
         <div className="hero-content flex-col lg:flex-row mx-10 gap-10">
           {/* Left Side */}
-          <div>
+          <div data-aos="fade-right" data-aos-duration="2000">
             {/* Left Side 1*/}
             <div className="my-5">
-              <h1 className="font-semibold text-2xl border-b-2  ">
+              <h1 className="font-semibold text-2xl border-b-4  ">
                 Academic Excellence:
               </h1>
               <p>
@@ -24,7 +28,7 @@ const Whychoose = () => {
 
             {/* Left Side 2*/}
             <div className="my-5">
-              <h1 className="font-semibold text-2xl border-b-2  ">
+              <h1 className="font-semibold text-2xl border-b-4  ">
                 Diverse Range of Programs:
               </h1>
               <p>
@@ -37,7 +41,7 @@ const Whychoose = () => {
             </div>
             {/* Left Side 3*/}
             <div className="my-5">
-              <h1 className="font-semibold text-2xl border-b-2 ">
+              <h1 className="font-semibold text-2xl border-b-4 ">
                 Student-Centered Approach:
               </h1>
               <p>
@@ -49,10 +53,10 @@ const Whychoose = () => {
             </div>
           </div>
           {/* Right Side */}
-          <div>
+          <div data-aos="fade-left" data-aos-duration="2000">
             {/* Right Side 1*/}
             <div className="my-5">
-              <h1 className="font-semibold text-2xl border-b-2 ">
+              <h1 className="font-semibold text-2xl border-b-4 ">
                 Research Opportunities:
               </h1>
               <p>
@@ -63,7 +67,7 @@ const Whychoose = () => {
             </div>
             {/* Right Side 2*/}
             <div className="my-5">
-              <h1 className="font-semibold text-2xl border-b-2 ">
+              <h1 className="font-semibold text-2xl border-b-4 ">
                 Career Readiness:
               </h1>
               <p>
@@ -75,7 +79,7 @@ const Whychoose = () => {
             </div>
             {/* Right Side 3*/}
             <div className="my-5">
-              <h1 className="font-semibold text-2xl border-b-2 ">
+              <h1 className="font-semibold text-2xl border-b-4 ">
                 Community Engagement:
               </h1>
               <p>

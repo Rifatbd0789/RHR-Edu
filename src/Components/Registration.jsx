@@ -1,16 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { context } from "../ContextProvider/Provider";
 import { updateProfile } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FcGoogle } from "react-icons/fc";
-// import { updateProfile } from "firebase/auth";
 
 const Registration = () => {
   const { createUser, googleLogIn } = useContext(context);
-  //   const [successReg, setSuccessReg] = useState("");
   const [registerError, setregisterError] = useState("");
+  const navigate = useNavigate();
   const handleRegister = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
@@ -52,6 +51,7 @@ const Registration = () => {
         e.target.reset();
       })
       .catch((error) => setregisterError(error.code));
+    navigate("/login");
   };
 
   const handleGoogleReg = () => {

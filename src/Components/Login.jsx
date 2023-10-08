@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { context } from "../ContextProvider/Provider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -17,19 +17,21 @@ const Login = () => {
     const password = form.get("password");
     setLogInError("");
     logInUser(email, password)
-      .then((res) => {
-        toast(`Successfully  ${res.operationType} ! `);
+      .then(() => {
         e.target.reset();
-        navigate(location?.state ? location.state : "/");
+        toast("Successfully! Logged In! ");
       })
       .catch((err) => setLogInError(err.code));
+    navigate(location?.state ? location.state : "/");
   };
 
   const handleGoogleLog = () => {
     setLogInError("");
     googleLogIn()
       .then((result) => {
-        toast(`${result.user.displayName}! Successfully Registered !`);
+        toast(
+          `${result.user.displayName}! Successfully Registered & Logged In !`
+        );
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => setLogInError(error.code));

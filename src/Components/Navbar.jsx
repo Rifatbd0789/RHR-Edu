@@ -12,7 +12,7 @@ const Navbar = () => {
         <NavLink
           to={"/"}
           className={({ isActive }) =>
-            isActive && " underline underline-offset-4 decoration-white "
+            isActive ? " underline underline-offset-4 decoration-white " : ""
           }
         >
           Home
@@ -22,7 +22,7 @@ const Navbar = () => {
         <NavLink
           to={"/blogs"}
           className={({ isActive }) =>
-            isActive && " underline underline-offset-4 decoration-white "
+            isActive ? " underline underline-offset-4 decoration-white " : ""
           }
         >
           Blogs
@@ -32,7 +32,7 @@ const Navbar = () => {
         <NavLink
           to={"/contact"}
           className={({ isActive }) =>
-            isActive && " underline underline-offset-4 decoration-white "
+            isActive ? " underline underline-offset-4 decoration-white " : ""
           }
         >
           Contact Us

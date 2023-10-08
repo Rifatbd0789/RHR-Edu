@@ -15,12 +15,17 @@ const Home = () => {
       </div>
       <Banner></Banner>
       {/* Card Section */}
-      <p className="font-bold text-5xl mt-10 mx-20 text-center">Our Services</p>
+      <div data-aos="fade-up" data-aos-duration="2000">
+        <p className="font-bold text-5xl mt-10 mx-20 text-center">
+          Our Services
+        </p>
+      </div>
       <div className="grid grid-cols-4  gap-10 my-10 mx-5">
         {datas.map((data) => (
           <Card key={data.id} data={data}></Card>
         ))}
       </div>
+      <hr />
       <div>
         <Experts></Experts>
       </div>

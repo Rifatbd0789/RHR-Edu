@@ -2,10 +2,12 @@ import Marquee from "react-fast-marquee";
 
 const Experts = () => {
   return (
-    <div>
-      <h1 className="text-center font-bold text-5xl mb-8">Our Experts</h1>
+    <div className="">
+      <div className="mb-8 mt-10" data-aos="fade-up" data-aos-duration="2000">
+        <h1 className="text-center font-bold text-5xl ">Our Experts</h1>
+      </div>
       <Marquee speed={100} pauseOnHover>
-        <div className="flex justify-center mb-10 ">
+        <div className="flex justify-center mb-10 bg-base-200 p-10">
           {/* first experts */}
           <div className="mr-32 ">
             <div className="avatar w-48 mx-auto">
@@ -64,6 +66,7 @@ const Experts = () => {
           </div>
         </div>
       </Marquee>
+      <hr />
     </div>
   );
 };

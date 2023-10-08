@@ -1,5 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import Navbar from "./Navbar";
+import { ToastContainer, toast } from "react-toastify";
 
 const Details = () => {
   const { id } = useParams();
@@ -22,11 +23,17 @@ const Details = () => {
           <div className="w-full text-center lg:text-left">
             <h1 className="text-5xl font-bold">{name}</h1>
             <p className="py-6">{details}</p>
-            <p className="pb-6 font-bold">Price: {price} $</p>
-            <button className="btn btn-primary">Join Now</button>
+            <p className="pb-6 font-medium">Price: {price} $</p>
+            <button
+              onClick={() => toast(`${name} Joined Successfully !`)}
+              className="btn btn-primary bg-[#013E62] border-none text-white hover:bg-slate-400 hover:text-black"
+            >
+              Join Now
+            </button>
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
