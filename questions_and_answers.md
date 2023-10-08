@@ -20,7 +20,7 @@ console.log(greetign);
 
 #### Answer: A
 
-<i>at first declared an variable name greeting.
+<i>at first declared an variable which name is greeting.
 then, the value of greetign was set to an empty object.
 that is why greetign will be an empty object {}.
 it is not related to that variable because of the spelling is different from each other.</i>

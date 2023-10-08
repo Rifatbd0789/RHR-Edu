@@ -1,6 +1,6 @@
 # RHR-EDU website using React
 
-### RHR-EDU Live Link : [RHR-EDU Click Here !](https://rhr-edu.web.app/)
+### RHR-EDU Live Link : [ https://rhr-edu.web.app/](https://rhr-edu.web.app/)
 
 ##### Some features and functionalities of RHR-EDU Website:
 
