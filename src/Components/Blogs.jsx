@@ -12,7 +12,7 @@ const Blogs = () => {
       </div>
       <div className="bg-base-200">
         <div data-aos="fade-down" data-aos-duration="2000">
-          <p className="text-5xl font-bold p-10 text-center underline text-[#135e8a]">
+          <p className="text-4xl md:text-5xl font-bold p-10 text-center underline text-[#135e8a]">
             Web Magazine
           </p>
         </div>
