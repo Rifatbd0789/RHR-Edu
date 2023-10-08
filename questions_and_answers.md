@@ -18,9 +18,12 @@ console.log(greetign);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: A
 
-<i>Write your explanation here</i>
+<i>at first declared an variable name greeting.
+then, the value of greetign was set to an empty object.
+that is why greetign will be an empty object {}.
+it is not related to that variable because of the spelling is different from each other.</i>
 
 </p>
 </details>
@@ -43,9 +46,13 @@ sum(1, "2");
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: C
 
-<i>Write your explanation here</i>
+<i>The input value of sum is the first one is number and the second one is string.
+we know if we try to use addition between number and string.
+it will just put that first number on first of an string.
+then, it will output an string.
+that is why output will be "12"</i>
 
 </p>
 </details>
@@ -69,9 +76,10 @@ console.log(food);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: A
 
-<i>Write your explanation here</i>
+<i>food is a variable which is a array. when another variable declared as a object new variable name info value will be the first element of that array.
+but then again when the value of that object is changed with another photo the new variable called info value changed with new value. but here when use console log it just output the total food. in this process food element is not changed that is why output will be same as food variable was before.</i>
 
 </p>
 </details>
@@ -94,9 +102,13 @@ console.log(sayHi());
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: B
 
-<i>Write your explanation here</i>
+<i>when we declared a function.
+there has a parameter called name.
+but trying to call the function in console.log but, not providing any parameter value.
+that is when the function returning a template string including that parameter.
+that is why the output will be undefined.</i>
 
 </p>
 </details>
@@ -122,9 +134,16 @@ console.log(count);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: C
 
-<i>Write your explanation here</i>
+<i>Here count variable is declared by let, because the value will change. nums variable is declared by const, because the value will not change.
+Here when using forEach loop.
+it is taking all the value one by one from that array called nums, and if the value is truthy the value or count is adding by 1.
+when the first value come is 0, but 0 is a falsy. that is why the count value is not changed.
+after that serially when the array value come for each loop is 1,2,3 which are truthy.
+that is why step by step the count was adding 1 with his previous value 3 time.
+that is why the count value is 3.
+</i>
 
 </p>
 </details>
