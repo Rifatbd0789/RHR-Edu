@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 const Card = ({ data }) => {
-  const { id, image, name, shorts, price } = data;
+  const { num, image, name, shorts, price } = data;
   return (
     <div>
       <div
@@ -21,7 +21,7 @@ const Card = ({ data }) => {
           <div className="card-actions justify-center">
             <Link
               className="btn btn-primary bg-[#013E62] border-none text-white hover:bg-slate-400 hover:text-black"
-              to={`/details/${id}`}
+              to={`/details/${num}`}
             >
               Details
             </Link>

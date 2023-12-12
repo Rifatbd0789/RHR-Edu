@@ -14,6 +14,8 @@ import Private from "./Components/Private";
 import Blogs from "./Components/Blogs";
 import ContactUs from "./Components/ContactUs";
 import Error from "./Components/Error";
+import AddBlog from "./Components/AddBlog";
+import MyClass from "./Components/MyClass";
 
 AOS.init();
 
@@ -26,7 +28,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("/data.json"),
+        loader: () => fetch("https://rhr-edu-backend.vercel.app/services"),
       },
       {
         path: "/login",
@@ -37,13 +39,13 @@ const router = createBrowserRouter([
         element: <Registration></Registration>,
       },
       {
-        path: "/details/:id",
+        path: "/details/:num",
         element: (
           <Private>
             <Details></Details>
           </Private>
         ),
-        loader: () => fetch("/data.json"),
+        loader: () => fetch("https://rhr-edu-backend.vercel.app/services"),
       },
       {
         path: "/blogs",
@@ -52,7 +54,7 @@ const router = createBrowserRouter([
             <Blogs></Blogs>
           </Private>
         ),
-        loader: () => fetch("/blog.json"),
+        loader: () => fetch("https://rhr-edu-backend.vercel.app/blogs"),
       },
       {
         path: "/contact",
@@ -61,6 +63,23 @@ const router = createBrowserRouter([
             <ContactUs></ContactUs>,
           </Private>
         ),
+      },
+      {
+        path: "/addBlog",
+        element: (
+          <Private>
+            <AddBlog />,
+          </Private>
+        ),
+      },
+      {
+        path: "/myClass",
+        element: (
+          <Private>
+            <MyClass />,
+          </Private>
+        ),
+        loader: () => fetch("https://rhr-edu-backend.vercel.app/myclass"),
       },
     ],
   },

@@ -126,7 +126,7 @@ const Registration = () => {
                 <p className="mb-2">
                   Already Have an account ?{" "}
                   <Link to={"/login"}>
-                    <span className="text-blue-600 font-bold mb-2">
+                    <span className="link link-hover text-blue-600 font-bold mb-2">
                       Login Here..
                     </span>
                   </Link>

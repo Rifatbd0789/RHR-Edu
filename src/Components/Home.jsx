@@ -22,7 +22,7 @@ const Home = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-10 my-10 mx-5">
         {datas.map((data) => (
-          <Card key={data.id} data={data}></Card>
+          <Card key={data._id} data={data}></Card>
         ))}
       </div>
       <hr />

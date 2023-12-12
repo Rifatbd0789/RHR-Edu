@@ -77,7 +77,7 @@ const Login = () => {
                 <p className="mb-2">
                   New Here ? Please
                   <Link to={"/register"}>
-                    <span className="text-blue-600 font-bold">
+                    <span className="link link-hover text-blue-600 font-bold">
                       {" "}
                       Register...
                     </span>

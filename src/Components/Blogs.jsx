@@ -18,7 +18,7 @@ const Blogs = () => {
         </div>
         <div className="mx-5">
           {datas.map((data) => (
-            <Blog key={data.id} data={data}></Blog>
+            <Blog key={data._id} data={data}></Blog>
           ))}
         </div>
         <Footer></Footer>

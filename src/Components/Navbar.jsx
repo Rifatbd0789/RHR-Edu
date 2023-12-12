@@ -38,6 +38,34 @@ const Navbar = () => {
           Contact Us
         </NavLink>
       </li>
+      {user && (
+        <>
+          <li>
+            <NavLink
+              to={"/addBlog"}
+              className={({ isActive }) =>
+                isActive
+                  ? " underline underline-offset-4 decoration-white "
+                  : ""
+              }
+            >
+              Add Blog
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to={"/myClass"}
+              className={({ isActive }) =>
+                isActive
+                  ? " underline underline-offset-4 decoration-white "
+                  : ""
+              }
+            >
+              My Classes
+            </NavLink>
+          </li>
+        </>
+      )}
     </>
   );
   const handleLogOut = () => {
