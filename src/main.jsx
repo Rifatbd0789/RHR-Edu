@@ -79,7 +79,7 @@ const router = createBrowserRouter([
             <MyClass />,
           </Private>
         ),
-        loader: () => fetch("https://rhr-edu-backend.vercel.app/myclass"),
+        loader: () => fetch(`https://rhr-edu-backend.vercel.app/myclass`),
       },
     ],
   },
