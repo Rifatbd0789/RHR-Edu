@@ -2,8 +2,10 @@ import { useContext } from "react";
 import { context } from "../ContextProvider/Provider";
 import Navbar from "./Navbar";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const AddBlog = () => {
+  const navigate = useNavigate();
   const { user } = useContext(context);
   const handleBlog = (e) => {
     e.preventDefault();
@@ -18,7 +20,6 @@ const AddBlog = () => {
       blogPhoto,
       content,
     };
-    console.log(dataBlog);
     fetch("https://rhr-edu-backend.vercel.app/blogs", {
       method: "POST",
       headers: {
@@ -28,10 +29,9 @@ const AddBlog = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.insertedCount > 0) {
+        if (data.insertedId) {
           toast("Your blog added successfully");
-
-          form.reset();
+          navigate("/blogs");
         }
       });
   };

@@ -49,11 +49,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/blogs",
-        element: (
-          <Private>
-            <Blogs></Blogs>
-          </Private>
-        ),
+        element: <Blogs></Blogs>,
         loader: () => fetch("https://rhr-edu-backend.vercel.app/blogs"),
       },
       {
